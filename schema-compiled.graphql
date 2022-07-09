@@ -5,6 +5,7 @@ type Mutation {
 type Query {
   _empty: String
   hello: String!
+  me: User!
   userById(userId: Int!): User
   users: [User!]!
 }

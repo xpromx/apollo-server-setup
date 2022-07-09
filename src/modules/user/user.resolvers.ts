@@ -1,24 +1,12 @@
-import { Resolvers, User } from "../../types";
-
-const users: User[] = [
-  {
-    id: 1,
-    firstName: "Rodrigo",
-    lastName: "Ramirez",
-    email: "test@test.com",
-  },
-  {
-    id: 2,
-    firstName: "Rodrigo 2",
-    lastName: "Ramirez 2",
-    email: "test2@test.com",
-  },
-];
+import { users } from "../../data";
+import { Resolvers } from "../../types";
+import { withAuth } from "../../utils/withAuth";
 
 export const UserResolvers: Resolvers = {
   Query: {
     users: () => users,
     userById: (_, { userId }) =>
       users.find((user) => user.id === userId) || null,
+    me: withAuth(() => users[0]),
   },
 };
