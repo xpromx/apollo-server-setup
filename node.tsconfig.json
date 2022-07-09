@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 16",
+  "extends": "./base.tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2020",
+    "rootDirs": ["src"],
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*"],
+  "types": ["typePatches", "node"]
+}

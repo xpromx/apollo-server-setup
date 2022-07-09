@@ -1,0 +1,14 @@
+## Build
+build/**
+dist/**
+.next/**
+.turbo
+dist
+
+# docker
+docker/logs/*
+!docker/logs/.gitkeep
+
+## NPM
+package-lock.json
+node_modules
