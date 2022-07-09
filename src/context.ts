@@ -1,5 +1,5 @@
 import { users } from "./data";
-import { User } from "./types";
+import { User } from "./graphql/types";
 
 export interface Context {
   user: User;

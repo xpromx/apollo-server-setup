@@ -1,5 +1,5 @@
 import { users } from "../../data";
-import { Resolvers } from "../../types";
+import { Resolvers } from "../../graphql/types";
 import { withAuth } from "../../utils/withAuth";
 
 export const UserResolvers: Resolvers = {

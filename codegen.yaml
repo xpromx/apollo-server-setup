@@ -1,13 +1,13 @@
 schema:
   - "./src/**/*.(gql|graphql)"
 generates:
-  ./schema-compiled.graphql:
+  ./src/graphql/schema-compiled.graphql:
     plugins:
       - schema-ast
     config:
       commentDescriptions: true
 
-  ./src/types.ts:
+  ./src/graphql/types.ts:
     config:
       useIndexSignature: true
     plugins:

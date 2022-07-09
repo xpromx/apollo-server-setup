@@ -5,7 +5,7 @@ import { context } from "./context";
 import { resolvers } from "./resolvers";
 
 const typeDefs = gql(
-  readFileSync(join(__dirname, "../schema-compiled.graphql"), "utf8")
+  readFileSync(join(__dirname, "./graphql/schema-compiled.graphql"), "utf8")
 );
 
 interface ServerOptions {
