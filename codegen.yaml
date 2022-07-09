@@ -1,5 +1,12 @@
-schema: ./src/schema.gql
+schema:
+  - "./src/**/*.(gql|graphql)"
 generates:
+  ./schema-compiled.graphql:
+    plugins:
+      - schema-ast
+    config:
+      commentDescriptions: true
+
   ./src/types.ts:
     config:
       useIndexSignature: true

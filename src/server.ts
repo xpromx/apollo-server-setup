@@ -3,7 +3,9 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import { resolvers } from "./resolvers";
 
-const typeDefs = gql(readFileSync(join(__dirname, "./schema.gql"), "utf8"));
+const typeDefs = gql(
+  readFileSync(join(__dirname, "../schema-compiled.graphql"), "utf8")
+);
 
 interface ServerOptions {
   port: number;
