@@ -5,10 +5,10 @@
 - [ ] Auto import resolvers + schemas files
 - [ ] Prisma DB
 - [x] Improve Tests
-- [ ] Authentication
+- [x] Authentication
 - [x] Authorization
 - [ ] Monitoring
 - [x] Github Actions CI/CD
 - [ ] Input Validations
-- [ ] Error Formating
+- [x] Error Formating
 - [x] Mocks
