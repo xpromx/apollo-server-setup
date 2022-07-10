@@ -1,11 +1,18 @@
 import { Resolvers } from "../../graphql/types";
-import { withAuth } from "../../utils/withAuth";
-import { UserService } from "./user.service";
+import { createUser } from "./mutations/createUser.mutation";
+import { me } from "./queries/me.query";
+import { userById } from "./queries/userById.query";
+import { users } from "./queries/users.query";
+import { UserType } from "./types/User.type";
 
 export const UserResolvers: Resolvers = {
   Query: {
-    users: () => UserService.getAll(),
-    userById: (_, { userId }) => UserService.getById(userId),
-    me: withAuth(() => UserService.getById(1)),
+    users,
+    userById,
+    me,
   },
+  Mutation: {
+    createUser,
+  },
+  User: UserType,
 };

@@ -1,4 +1,4 @@
-import { User } from "./graphql/types";
+import { User } from "../../graphql/types";
 
 export const users: User[] = [
   {
@@ -6,11 +6,13 @@ export const users: User[] = [
     firstName: "Rodrigo",
     lastName: "Ramirez",
     email: "test@test.com",
+    fullName: "",
   },
   {
     id: 2,
     firstName: "Rodrigo 2",
     lastName: "Ramirez 2",
     email: "test2@test.com",
+    fullName: "",
   },
 ];

@@ -1,5 +1,16 @@
+input CreateUserInput {
+  email: String!
+  firstName: String!
+  lastName: String!
+}
+
+type CreateUserPayload {
+  user: User
+}
+
 type Mutation {
   _empty: String
+  createUser(input: CreateUserInput!): CreateUserPayload!
 }
 
 type Query {
@@ -13,6 +24,7 @@ type Query {
 type User {
   email: String!
   firstName: String!
+  fullName: String!
   id: Int!
   lastName: String!
 }
