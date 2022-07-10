@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const mergeResolvers = (resolvers: any[]) => {
   return resolvers.reduce((acc, resolver) => {
     Object.keys(resolver).forEach((key) => {
