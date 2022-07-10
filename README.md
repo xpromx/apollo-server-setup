@@ -1,3 +1,11 @@
+## Points
+
+- Schema First Approach: code as pure as possible
+- DDD
+- Authorization: using graphql-shield
+- TDD: using apollo-server mocks
+- Integration Tests + Mocking
+
 ## ToDo
 
 - [x] Jest Setup
@@ -12,3 +20,4 @@
 - [ ] Input Validations
 - [x] Error Formating
 - [x] Mocks
+- [ ] Fastify/Express?
