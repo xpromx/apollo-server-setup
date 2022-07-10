@@ -10,7 +10,7 @@
     "generate": "graphql-codegen",
     "test:lint": "eslint \"src/**/*.ts\" --fix",
     "test:jest": "jest -i",
-    "test": "yarn test:jest"
+    "test": "yarn test:lint && yarn test:jest"
   },
   "keywords": [],
   "author": "",
