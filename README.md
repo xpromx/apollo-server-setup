@@ -4,10 +4,10 @@
 - [x] Service Class
 - [ ] Auto import resolvers + schemas files
 - [ ] Prisma DB
-- [ ] Improve Tests
+- [x] Improve Tests
 - [ ] Authentication
 - [ ] Authorization
 - [ ] Monitoring
-- [ ] Github Actions CI/CD
+- [x] Github Actions CI/CD
 - [ ] Input Validations
 - [ ] Error Formating
