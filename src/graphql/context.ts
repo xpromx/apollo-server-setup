@@ -1,4 +1,4 @@
-import { users } from "../data";
+import { users } from "../modules/user/data";
 import { User } from "./types";
 
 export interface Context {

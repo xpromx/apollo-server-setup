@@ -1,6 +1,9 @@
-import { users } from "../../data";
+import { getUserById } from "./jobs/getUserById";
+import { getUsers } from "./jobs/getUsers";
+import { createUser } from "./jobs/createUser";
 
 export const UserService = {
-  getAll: () => users,
-  getById: (userId: number) => users.find((user) => user.id === userId) || null,
+  getAll: getUsers,
+  getById: getUserById,
+  create: createUser,
 };
