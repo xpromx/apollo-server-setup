@@ -6,7 +6,7 @@
 - [ ] Prisma DB
 - [x] Improve Tests
 - [ ] Authentication
-- [ ] Authorization
+- [x] Authorization
 - [ ] Monitoring
 - [x] Github Actions CI/CD
 - [ ] Input Validations
