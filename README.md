@@ -1,4 +1,4 @@
-## Points
+## Description
 
 - Schema First Approach: code as pure as possible
 - DDD
