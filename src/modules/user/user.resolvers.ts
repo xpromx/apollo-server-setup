@@ -1,12 +1,11 @@
-import { users } from "../../data";
 import { Resolvers } from "../../graphql/types";
 import { withAuth } from "../../utils/withAuth";
+import { UserService } from "./user.service";
 
 export const UserResolvers: Resolvers = {
   Query: {
-    users: () => users,
-    userById: (_, { userId }) =>
-      users.find((user) => user.id === userId) || null,
-    me: withAuth(() => users[0]),
+    users: () => UserService.getAll(),
+    userById: (_, { userId }) => UserService.getById(userId),
+    me: withAuth(() => UserService.getById(1)),
   },
 };
