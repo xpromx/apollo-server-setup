@@ -1,9 +1,8 @@
 import { UserService } from "../modules/user/user.service";
-import { User } from "./types";
 import { IncomingMessage } from "http";
 
 export interface Context {
-  user: User | null;
+  user: { id: number } | null;
 }
 
 interface ContextArgs {
@@ -12,6 +11,6 @@ interface ContextArgs {
 
 export const context = ({ req }: ContextArgs): Context => {
   return {
-    user: UserService.getByToken(req.headers.authorization),
+    user: req ? UserService.getByToken(req.headers.authorization) : null,
   };
 };
