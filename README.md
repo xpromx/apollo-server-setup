@@ -1,6 +1,6 @@
 ## ToDo
 
-- [ ] Jest Setup
+- [x] Jest Setup
 - [x] Service Class
 - [ ] Auto import resolvers + schemas files
 - [ ] Prisma DB
