@@ -11,3 +11,4 @@
 - [x] Github Actions CI/CD
 - [ ] Input Validations
 - [ ] Error Formating
+- [x] Mocks
