@@ -1,8 +1,8 @@
 import { ApolloServer, gql } from "apollo-server";
 import { readFileSync } from "fs";
 import { join } from "path";
-import { context } from "./context";
-import { resolvers } from "./resolvers";
+import { context } from "./graphql/context";
+import { resolvers } from "./graphql/resolvers";
 
 const typeDefs = gql(
   readFileSync(join(__dirname, "./graphql/schema-compiled.graphql"), "utf8")
