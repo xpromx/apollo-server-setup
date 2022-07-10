@@ -17,7 +17,7 @@
 - [x] Authorization
 - [ ] Monitoring
 - [x] Github Actions CI/CD
-- [ ] Input Validations
+- [x] Input Validations
 - [x] Error Formating
 - [x] Mocks
 - [ ] Fastify/Express?
