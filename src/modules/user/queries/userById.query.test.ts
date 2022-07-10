@@ -11,7 +11,8 @@ const users: Partial<User>[] = [
 
 jest.mock("../user.service", () => ({
   UserService: {
-    getById: (userId: number) => users.find((user) => user.id === userId),
+    getById: (userId: number) =>
+      users.find((user) => user.id === userId) || null,
   },
 }));
 
@@ -47,7 +48,7 @@ describe("queries/userById", () => {
   it("should return null with invalid Id", async () => {
     const response = await server.executeOperation({
       query: QUERY,
-      variables: { userId: 999 },
+      variables: { userId: 100 },
     });
 
     expect(response.errors).toBeFalsy();

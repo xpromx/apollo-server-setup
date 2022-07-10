@@ -2,6 +2,7 @@ import { ApolloServer, gql } from "apollo-server";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { context } from "./graphql/context";
+import { mocks } from "./graphql/mocks";
 import { resolvers } from "./graphql/resolvers";
 
 const typeDefs = gql(
@@ -13,6 +14,8 @@ export const createApolloServer = () => {
     typeDefs,
     resolvers,
     context,
+    mocks,
+    mockEntireSchema: false,
   });
 
   return server;

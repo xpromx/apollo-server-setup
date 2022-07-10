@@ -1,3 +1,9 @@
+type Country {
+  code: String!
+  id: Int!
+  name: String!
+}
+
 input CreateUserInput {
   email: String!
   firstName: String!
@@ -15,6 +21,8 @@ type Mutation {
 
 type Query {
   _empty: String
+  countries: [Country!]!
+  countryById(countryId: Int!): Country
   hello: String!
   me: User!
   userById(userId: Int!): User
