@@ -8,18 +8,12 @@ const typeDefs = gql(
   readFileSync(join(__dirname, "./graphql/schema-compiled.graphql"), "utf8")
 );
 
-interface ServerOptions {
-  port: number;
-}
-
-export const createApolloServer = async (
-  options: ServerOptions = { port: Number(process.env.PORT) || 4000 }
-) => {
+export const createApolloServer = () => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
     context,
   });
 
-  return server.listen(options);
+  return server;
 };
