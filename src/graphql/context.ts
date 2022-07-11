@@ -5,7 +5,7 @@ export interface Context {
   user: { id: number } | null;
 }
 
-interface ContextArgs {
+export interface ContextArgs {
   req: IncomingMessage;
 }
 

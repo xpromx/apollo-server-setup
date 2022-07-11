@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UserInputError } from "apollo-server";
+import { UserInputError } from "apollo-server-express";
 import * as yup from "yup";
 
 export interface ErrorFormat {

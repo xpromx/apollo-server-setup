@@ -1,4 +1,8 @@
-import { ApolloServer, gql } from "apollo-server";
+import { ApolloServer, gql } from "apollo-server-express";
+import {
+  ApolloServerPluginDrainHttpServer,
+  PluginDefinition,
+} from "apollo-server-core";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { applyMiddleware } from "graphql-middleware";
@@ -8,6 +12,7 @@ import { mocks } from "./graphql/mocks";
 import { resolvers } from "./graphql/resolvers";
 import { permissions } from "./graphql/authorization";
 import { formatError } from "./graphql/formatError";
+import http from "http";
 
 const typeDefs = gql(
   readFileSync(join(__dirname, "./graphql/schema-compiled.graphql"), "utf8")
@@ -15,6 +20,7 @@ const typeDefs = gql(
 
 interface ServerOptions {
   context?: Context;
+  httpServer?: http.Server;
 }
 
 export const createApolloServer = (options?: ServerOptions) => {
@@ -22,6 +28,14 @@ export const createApolloServer = (options?: ServerOptions) => {
     typeDefs,
     resolvers,
   });
+
+  const plugins: PluginDefinition[] = [];
+
+  if (options?.httpServer) {
+    plugins.push(
+      ApolloServerPluginDrainHttpServer({ httpServer: options.httpServer })
+    );
+  }
 
   const server = new ApolloServer({
     schema: applyMiddleware(schema, permissions),
@@ -31,6 +45,7 @@ export const createApolloServer = (options?: ServerOptions) => {
     mockEntireSchema: false,
     csrfPrevention: true,
     cache: "bounded",
+    plugins,
   });
 
   return server;

@@ -20,7 +20,7 @@
 - [x] Input Validations
 - [x] Error Formating
 - [x] Mocks
-- [ ] Fastify/Express?
+- [x] Express -> (recommeded & most popular with apollo server)
 - [ ] Cache
 - [ ] Schema validation
 - [ ] Cors

@@ -1,4 +1,4 @@
-import { ApolloError, AuthenticationError } from "apollo-server";
+import { ApolloError, AuthenticationError } from "apollo-server-express";
 import { shield, allow, rule } from "graphql-shield";
 
 const isAuthenticated = rule({ cache: "no_cache" })(async (_, __, ctx) => {
