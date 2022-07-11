@@ -12,3 +12,6 @@ docker/logs/*
 ## NPM
 package-lock.json
 node_modules
+
+# Others
+prisma/dev.db

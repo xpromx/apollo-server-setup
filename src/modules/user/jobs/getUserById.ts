@@ -1,5 +1,5 @@
-import { users } from "../data";
+import { db } from "../../../utils/db";
 
 export const getUserById = (userId: number) => {
-  return users.find((user) => user.id === userId) || null;
+  return db.user.findUnique({ where: { id: userId } });
 };

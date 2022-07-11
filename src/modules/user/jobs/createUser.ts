@@ -1,5 +1,5 @@
-import { users } from "../data";
-import { CreateUserInput, User } from "../../../graphql/types";
+import { CreateUserInput } from "../../../graphql/types";
+import { db } from "../../../utils/db";
 import { yup, yupValidate } from "../../../utils/yupValidate";
 
 const createUserRules = {
@@ -8,14 +8,11 @@ const createUserRules = {
   email: yup.string().email().required(),
 };
 
-export const createUser = async (input: CreateUserInput): Promise<User> => {
+export const createUser = async (input: CreateUserInput) => {
   await yupValidate<CreateUserInput>(createUserRules, input);
+  const user = await db.user.create({
+    data: { ...input, token: `token-${input.email}` },
+  });
 
-  return {
-    id: users.length + 1,
-    firstName: input.firstName,
-    lastName: input.lastName,
-    email: input.email,
-    fullName: "",
-  };
+  return user;
 };
