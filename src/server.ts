@@ -29,6 +29,8 @@ export const createApolloServer = (options?: ServerOptions) => {
     mocks,
     formatError,
     mockEntireSchema: false,
+    csrfPrevention: true,
+    cache: "bounded",
   });
 
   return server;

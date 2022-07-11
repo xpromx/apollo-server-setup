@@ -21,3 +21,6 @@
 - [x] Error Formating
 - [x] Mocks
 - [ ] Fastify/Express?
+- [ ] Cache
+- [ ] Schema validation
+- [ ] Cors
