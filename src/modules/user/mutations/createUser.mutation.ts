@@ -8,6 +8,6 @@ export const createUser: MutationResolvers["createUser"] = async (
   const user = await UserService.create(input);
 
   return {
-    user,
+    user: { ...user },
   };
 };

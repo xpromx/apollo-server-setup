@@ -1,5 +1,5 @@
-import { users } from "../data";
+import { db } from "../../../utils/db";
 
 export const getUsers = () => {
-  return users;
+  return db.user.findMany({ orderBy: { id: "asc" } });
 };

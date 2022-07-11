@@ -9,8 +9,8 @@ export interface ContextArgs {
   req: IncomingMessage;
 }
 
-export const context = ({ req }: ContextArgs): Context => {
+export const context = async ({ req }: ContextArgs): Promise<Context> => {
   return {
-    user: req ? UserService.getByToken(req.headers.authorization) : null,
+    user: req ? await UserService.getByToken(req.headers.authorization) : null,
   };
 };

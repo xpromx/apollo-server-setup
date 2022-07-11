@@ -10,6 +10,10 @@ generates:
   ./src/graphql/types.ts:
     config:
       useIndexSignature: true
+      contextType: ./context#Context
+      mappers:
+        User: .prisma/client#User as UserModel
+        Country: .prisma/client#Country as CountryModel
     plugins:
       - typescript
       - typescript-resolvers
