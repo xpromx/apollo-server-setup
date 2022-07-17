@@ -13,7 +13,7 @@ Trying a new GraphQL Apollo-server Setup.
 
 - [x] Jest Setup
 - [x] Service Class
-- [ ] Auto import resolvers + schemas files
+- [x] Auto import resolvers + schemas files
 - [x] Prisma DB
 - [ ] Add test using DB
 - [x] Improve Tests
@@ -28,6 +28,8 @@ Trying a new GraphQL Apollo-server Setup.
 - [x] Cache
 - [ ] Schema validation
 - [ ] Cors
+- [ ] GraphQL Linter
+- [ ] Improve SETUP
 
 ## Commands
 
