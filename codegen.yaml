@@ -1,11 +1,12 @@
 schema:
   - "./src/**/*.(gql|graphql)"
 generates:
-  ./src/graphql/schema-compiled.graphql:
+  ./schema-compiled.graphql:
     plugins:
       - schema-ast
     config:
       commentDescriptions: true
+      includeDirectives: true
 
   ./src/graphql/types.ts:
     config:
