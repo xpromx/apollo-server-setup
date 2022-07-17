@@ -1,3 +1,15 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+directive @cacheControl(inheritMaxAge: Boolean, maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | INTERFACE | OBJECT | UNION
+
+enum CacheControlScope {
+  PRIVATE
+  PUBLIC
+}
+
 type Country {
   code: String!
   id: Int!
@@ -25,7 +37,7 @@ type Query {
   countryById(countryId: Int!): Country
   hello: String!
   me: User!
-  userById(userId: Int!): User
+  userById(userId: Int!): User @cacheControl(maxAge: 0)
   users: [User!]!
 }
 

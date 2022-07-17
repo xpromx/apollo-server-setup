@@ -25,7 +25,7 @@ Trying a new GraphQL Apollo-server Setup.
 - [x] Error Formating
 - [x] Mocks
 - [x] Express -> (recommeded & most popular with apollo server)
-- [ ] Cache
+- [x] Cache
 - [ ] Schema validation
 - [ ] Cors
 
