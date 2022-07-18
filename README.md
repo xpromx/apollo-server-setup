@@ -28,7 +28,7 @@ Trying a new GraphQL Apollo-server Setup.
 - [x] Cache
 - [ ] Schema validation
 - [ ] Cors
-- [ ] GraphQL Linter
+- [x] GraphQL Linter
 - [ ] Improve SETUP
 
 ## Commands

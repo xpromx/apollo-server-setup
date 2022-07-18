@@ -8,7 +8,7 @@
     "build": "tsc && cp ./schema-compiled.graphql dist/",
     "start": "node ./dist/index.js",
     "generate": "graphql-codegen",
-    "test:lint": "eslint \"src/**/*.ts\" --fix",
+    "test:lint": "eslint \"src/**\" --ext gql,js .",
     "test:jest": "jest -i",
     "test": "yarn test:lint && yarn test:jest",
     "db:seeds": "npx prisma db seed",
@@ -37,6 +37,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@graphql-eslint/eslint-plugin": "^3.10.6",
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
     "@types/yup": "^0.29.14",
