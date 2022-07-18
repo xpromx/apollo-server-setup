@@ -5,7 +5,7 @@ on:
     branches-ignore: [main]
 
 jobs:
-  test:
+  tests:
     name: Tests
     runs-on: ubuntu-latest
 
@@ -16,10 +16,10 @@ jobs:
       - run: yarn test:lint
       - run: yarn test:jest
 
-  test:
-    name: Check Schema
+  schema-validation:
+    name: Schema Validation
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@master
