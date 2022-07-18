@@ -4,16 +4,17 @@ enum CacheControlScope {
 }
 
 directive @cacheControl(
+  inheritMaxAge: Boolean
   maxAge: Int
   scope: CacheControlScope
-  inheritMaxAge: Boolean
-) on FIELD_DEFINITION | OBJECT | INTERFACE | UNION
+) on FIELD_DEFINITION | INTERFACE | OBJECT | UNION
 
 type Query {
+  # eslint-disable-next-line
   _empty: String
-  userById(userId: Int!): User @cacheControl(maxAge: 0)
 }
 
 type Mutation {
+  # eslint-disable-next-line
   _empty: String
 }

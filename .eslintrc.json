@@ -1,23 +1,41 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier"
+  "root": true,
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "env": {
+        "browser": false,
+        "node": true,
+        "es6": true
+      },
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/camelcase": 0,
+        "jest/no-standalone-expect": 0,
+        "no-console": 0,
+        "prettier/prettier": "error"
+      }
+    },
+    {
+      "files": "*.{graphql,gql}",
+      "extends": "plugin:@graphql-eslint/schema-recommended",
+      "parserOptions": {
+        "schema": "./**/*.{graphql,gql}"
+      },
+      "rules": {
+        "prettier/prettier": 2,
+        "@graphql-eslint/require-description": 0,
+        "@graphql-eslint/strict-id-in-types": 0
+      }
+    }
   ],
-  "parser": "@typescript-eslint/parser",
-  "env": {
-    "browser": false,
-    "node": true,
-    "es6": true
-  },
-  "rules": {
-    "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/explicit-module-boundary-types": 0,
-    "@typescript-eslint/camelcase": 0,
-    "jest/no-standalone-expect": 0,
-    "no-console": 0,
-    "prettier/prettier": "error"
-  },
-  "ignorePatterns": ["src/graphql/types.ts"]
+  "ignorePatterns": ["src/graphql/types.ts", "schema-compiled.graphql"]
 }
