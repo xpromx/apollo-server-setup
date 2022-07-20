@@ -27,9 +27,10 @@ Trying a new GraphQL Apollo-server Setup.
 - [x] Express -> (recommeded & most popular with apollo server)
 - [x] Cache
 - [x] Schema validation
-- [ ] Cors
 - [x] GraphQL Linter
-- [ ] Improve SETUP
+- [ ] Depth Limit
+- [ ] Sentry
+- [ ] Logger
 
 ## Commands
 
