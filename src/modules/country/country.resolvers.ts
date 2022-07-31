@@ -1,20 +1,5 @@
-import { extendType, intArg, nonNull } from "nexus";
+import { countries } from "./queries/countries.query";
+import { countryById } from "./queries/countryById.query";
 import { CountryType } from "./types/Country.type";
 
-const CountryQuery = extendType({
-  type: "Query",
-  definition(t) {
-    t.nonNull.list.nonNull.field("countries", {
-      type: CountryType,
-      resolve: () => [],
-    });
-    t.field("countryById", {
-      type: CountryType,
-      args: {
-        countryId: nonNull(intArg()),
-      },
-    });
-  },
-});
-
-export const CountryResolvers = [CountryQuery, CountryType];
+export const CountryResolvers = [countries, countryById, CountryType];

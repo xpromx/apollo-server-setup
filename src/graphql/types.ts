@@ -74,7 +74,7 @@ export interface NexusGenFieldTypes {
     createUser: NexusGenRootTypes['CreateUserPayload']; // CreateUserPayload!
   }
   Query: { // field return type
-    countries: NexusGenRootTypes['Country'][]; // [Country!]!
+    countries: NexusGenRootTypes['Country'][] | null; // [Country!]
     countryById: NexusGenRootTypes['Country'] | null; // Country
     hello: string | null; // String
     me: NexusGenRootTypes['User']; // User!
