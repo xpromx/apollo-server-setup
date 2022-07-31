@@ -23,7 +23,7 @@ type Mutation {
 }
 
 type Query {
-  countries: [Country!]
+  countries: [Country!]!
   countryById(countryId: Int!): Country
   hello: String
   me: User!

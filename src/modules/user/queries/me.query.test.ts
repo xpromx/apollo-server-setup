@@ -1,4 +1,4 @@
-import { User } from "../../../graphql/types";
+import { User } from "@prisma/client";
 import { createApolloServer } from "../../../server";
 
 const users: Partial<User>[] = [

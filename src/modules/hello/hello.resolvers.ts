@@ -1,7 +1,10 @@
-import { Resolvers } from "../../graphql/types";
+import { extendType } from "nexus";
 
-export const HelloResolvers: Resolvers = {
-  Query: {
-    hello: () => "Hello World!",
+const HelloQuery = extendType({
+  type: "Query",
+  definition(t) {
+    t.string("hello", { resolve: () => "Hello World!" });
   },
-};
+});
+
+export const HelloResolvers = [HelloQuery];

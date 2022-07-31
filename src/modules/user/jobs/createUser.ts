@@ -1,6 +1,8 @@
-import { CreateUserInput } from "../../../graphql/types";
+import { NexusGenInputs } from "../../../graphql/types";
 import { db } from "../../../utils/db";
 import { yup, yupValidate } from "../../../utils/yupValidate";
+
+type CreateUserInput = NexusGenInputs["CreateUserInput"];
 
 const createUserRules = {
   firstName: yup.string().required(),

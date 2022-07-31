@@ -1,15 +1,24 @@
 import { AuthenticationError } from "apollo-server-express";
-import { QueryResolvers } from "../../../graphql/types";
+import { extendType } from "nexus";
+import { UserType } from "../types/User.type";
 import { UserService } from "../user.service";
 
-export const me: QueryResolvers["me"] = async (_, __, { user }) => {
-  if (!user) {
-    throw new AuthenticationError("Not Authenticated!");
-  }
+export const me = extendType({
+  type: "Query",
+  definition(t) {
+    t.nonNull.field("me", {
+      type: UserType,
+      resolve: async (_, __, { user }) => {
+        if (!user) {
+          throw new AuthenticationError("Not Authenticated!");
+        }
 
-  const res = await UserService.getById(user?.id);
-  if (!res) {
-    throw new Error("User not found");
-  }
-  return res;
-};
+        const res = await UserService.getById(user?.id);
+        if (!res) {
+          throw new Error("User not found");
+        }
+        return res;
+      },
+    });
+  },
+});
