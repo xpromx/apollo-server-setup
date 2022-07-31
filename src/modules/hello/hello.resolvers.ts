@@ -1,7 +1,9 @@
-import { Resolvers } from "../../graphql/types";
+import { queryType } from "nexus";
 
-export const HelloResolvers: Resolvers = {
-  Query: {
-    hello: () => "Hello World!",
+const HelloQuery = queryType({
+  definition(t) {
+    t.string("hello", { resolve: () => "Hello World!" });
   },
-};
+});
+
+export const HelloResolvers = [HelloQuery];
